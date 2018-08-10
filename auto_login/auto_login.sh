@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# SERVER1 LOGINNAME1 PORT1 SSHPATH1 are personal environment variables
 IP=$SERVER1
 USER=$LOGINNAME1
 PORT=$PORT1
@@ -7,6 +8,7 @@ SSHPATH=$SSHPATH1
 EDITOR_WINDOW=remote-editor
 HELP_WINDOW=remote-man
 
+# wait for Password message for su command
 function login(){
     tmux send-keys -t  ":$1" "clear" Enter "$SSHCOMMAND" Enter "su $SUSER" Enter 
 
@@ -34,6 +36,7 @@ read SUSER
 printf "Password "
 read -s PASS
 
+# kill the same-name window before create it
 kill_window $EDITOR_WINDOW
 kill_window $HELP_WINDOW
 
