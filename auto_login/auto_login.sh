@@ -21,7 +21,6 @@ function login(){
         sleep 1
     done
 
-    tmux send-keys "clear"
     tmux send-keys -t "$1" "$PASS" Enter
 }
 
