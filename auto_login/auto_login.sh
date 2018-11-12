@@ -40,7 +40,7 @@ read -s PASS
 kill_window $EDITOR_WINDOW
 kill_window $HELP_WINDOW
 
-SSHCOMMAND="ssh $USER@$IP -p$PORT -i $SSHPATH"
+SSHCOMMAND="ssh archlinux"
 
 tmux new-window -n $EDITOR_WINDOW
 tmux set-window-option allow-rename off
