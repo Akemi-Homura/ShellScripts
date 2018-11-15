@@ -22,6 +22,16 @@ function login(){
     done
 
     tmux send-keys -t "$1" "$PASS" Enter
+
+    while true
+    do
+        if tmux capture-pane -t "$1" -p | grep at
+        then
+            break
+        fi
+        sleep 1
+    done
+    tmux send-keys -t "$1" "source ~/.zshrc && cd && clear" Enter
 }
 
 function kill_window(){
